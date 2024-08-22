@@ -23,10 +23,15 @@ public class Product {
     
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     
     private String name;
 
     private Integer price;
+
+    public Product(RequestProductDTO requestProductDTO){
+        this.name = requestProductDTO.name();
+        this.price = requestProductDTO.price();
+    }
 }
 
